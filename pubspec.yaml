@@ -41,6 +41,8 @@ dependencies:
   flutter_riverpod: ^2.4.9
   dio: ^5.4.0
   pod_player: ^0.2.1
+  lottie: ^2.7.0
+  flutter_offline: ^3.0.1
 
 
 

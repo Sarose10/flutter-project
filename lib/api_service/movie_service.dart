@@ -33,6 +33,23 @@ class MovieService {
     }
   }
 
+  static Future<List<Movie>> getSearch({required String searchText}) async {
+    try {
+      final response = await dio.get('${Api.getSearchMovie}', queryParameters: {
+        'query': searchText
+      });
+      print(response.data['results']);
+      if((response.data['results'] as List).isEmpty){
+        throw 'please provide another search keyword';
+      }else{
+        return (response.data['results'] as List).map((e) => Movie.formJson(e) ).toList();
+      }
+
+    } on DioException catch (err) {
+      throw '${err.message}';
+    }
+  }
+
 
 
 }
