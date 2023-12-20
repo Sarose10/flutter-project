@@ -43,6 +43,7 @@ dependencies:
   pod_player: ^0.2.1
   lottie: ^2.7.0
   flutter_offline: ^3.0.1
+  riverpod_infinite_scroll: ^1.0.9
 
 
 
