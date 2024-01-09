@@ -58,6 +58,42 @@ class PostService {
   }
 
 
+
+
+  static  Future<void> likePost({
+    required String postId,
+    required int prevLike,
+    required List<String> usernames
+  }) async{
+    try{
+
+      await  _db.doc(postId).update({
+        'like': {
+          'likes': prevLike + 1,
+          'usernames': usernames
+        },
+      });
+    }on FirebaseException catch(err){
+      throw '${err.message}';
+    }
+  }
+
+
+  static  Future<void> addComment({
+    required String postId,
+    required List<Comment> comments
+  }) async{
+    try{
+
+      await  _db.doc(postId).update({
+        'comments': comments.map((e) => e.toMap()).toList()
+      });
+    }on FirebaseException catch(err){
+      throw '${err.message}';
+    }
+  }
+
+
   static  Future<void> removePost({
     required String postId,
     required String imageId

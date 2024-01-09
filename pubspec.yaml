@@ -58,14 +58,17 @@ dependencies:
   flutter_chat_ui: ^1.6.10
   cloud_firestore: ^4.13.6
   flutter_firebase_chat_core: ^1.6.7
+  flutter_launcher_icons: ^0.13.1
+  google_sign_in: ^6.2.1
+
 
 flutter_native_splash:
     color: "#ffffff"
-    image: assets/images/movie.png
+    image: assets/images/chat.png
 
 
     android_12:
-      image: assets/images/movie.png
+      image: assets/images/chat.png
       icon_background_color: "#ffffff"
 
 
@@ -77,10 +80,12 @@ flutter_native_splash:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  riverpod_generator: ^2.3.9
+  build_runner: ^2.4.7
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/movie.png"
+  image_path: "assets/images/chat.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 
